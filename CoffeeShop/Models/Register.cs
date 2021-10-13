@@ -13,7 +13,7 @@ namespace CoffeeShop.Models
     {
 
         [Key]
-        [Display(Name = " Username ")]
+        [Display(Name = " Username: ")]
         public string UserName { get; set; }
 
         [Display(Name = "First Name: ")]
