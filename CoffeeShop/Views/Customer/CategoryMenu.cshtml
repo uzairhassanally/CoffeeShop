@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CoffeeShop.Models.Category>
+
+@{
+    ViewBag.Title = "CategoryMenu";
+    Layout = "~/Views/Shared/Customer.cshtml";
+}
+
+
+
+
+
+
+
+@foreach (var category in Model)
+
+{
+
+    <p class="btn">
+        @Html.ActionLink(category.Name, "Browse", "Customer", new { Category = category.Name }, null)
+
+    </p>
+
+}
+
+
+

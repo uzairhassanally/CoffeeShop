@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CoffeeShop.Models.TaskDescription>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<div class="main-content">
+    <main>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TaskName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TaskName)
+                    </td>
+                    @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.NameId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.NameId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.NameId })
+                    </td>*@
+                </tr>
+            }
+
+        </table>
+    </main>
+
+</div>

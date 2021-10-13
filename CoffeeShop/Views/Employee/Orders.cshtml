@@ -1,0 +1,114 @@
+﻿@model IEnumerable<CoffeeShop.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+
+<div class="main-content">
+    <main>
+
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <h1>@Model.Count()</h1>
+                    <span>Total Orders</span>
+                </div>
+                <div>
+                    <span class="las la-shopping-bag"></span>
+                </div>
+            </div>
+        </div>
+        @*<table class="table">
+            <tr>
+                <th>Order ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Order Date</th>
+                <th>Status</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.OrderId</td>
+                    <td>@item.Username</td>
+                    <td>@item.Email</td>
+                    <td>@item.OrderDate</td>
+                    <td>@item.Status</td>
+
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "EditOrders", new { id = item.OrderId }) |
+                        @Html.ActionLink("Details", "OrderDetails", new { id = item.OrderId }) |
+                        @Html.ActionLink("update", "update", "Employee")
+                    </td>
+                </tr>
+            }
+
+        </table>*@
+
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Orders</h3>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Order ID</td>
+                                        <td>Order Name</td>
+                                        <td>User Name</td>
+                                        <td>Email</td>
+                                        <td>Order Date</td>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.OrderId</td>
+                                            <td>@item.Ordername</td>
+                                            <td>@item.Username</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.OrderDate</td>
+                                            
+
+
+
+                                            <td>
+                                                @*@Html.ActionLink("Edit", "EditOrders", new { id = item.OrderId }) |*@
+                                                @Html.ActionLink("Details", "OrderDetails", new { id = item.OrderId }) |
+                                                @Html.ActionLink("update", "update", "Employee")
+                                                
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+</div>

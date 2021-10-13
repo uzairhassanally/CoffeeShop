@@ -1,0 +1,108 @@
+﻿@model IEnumerable<CoffeeShop.Models.EmployeeRegister>
+
+@{
+    ViewBag.Title = "PayFast";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+<head>
+    <style>
+        input[type=submit] {
+            background-color: #4CAF50;
+            border-block-end-style:dotted;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+           
+        }
+    </style>
+</head>
+<div class="main-content">
+    <main>
+
+
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Employees</h3>
+                        <a href="~/EmployeeRegisters/Create"><button>Add New<span class="las la-arrow-right"></span></button></a>
+                        <a href="~/EmployeeRegisters/PayFast"><button>Salary<span class="las la-arrow-right"></span></button></a>
+                        <a href="~/WorkFlows/Create"><button>Tasks<span class="las la-arrow-right"></span></button></a>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>Firstname</td>
+                                        <td>Last Name</td>
+                                        <td>Role</td>
+                                        <td>Salary</td>
+                                        <td>emp id</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Email</td>
+                                            <td>@item.FirstName</td>
+                                            <td>@item.LastName</td>
+                                            <td>@item.Role</td>
+                                            <td>@item.Amount</td>
+                                            <td>@item.EmployeeId</td>
+
+                                            <td>
+                                                <form action="https://www.payfast.co.za/eng/process" name="form_8186e1b3149d324292a00bd6b6035260" onsubmit="return click_8186e1b3149d324292a00bd6b6035260( this );" method="post">
+                                                    <input type="hidden" name="cmd" value="_paynow">
+                                                    <input type="hidden" name="receiver" value="@item.EmployeeId">
+                                                    <input type="hidden" name="item_name" value="Salary">
+                                                    <input type="hidden" name="amount" value="@item.Amount">
+                                                    <input type="hidden" name="item_description" value=" ">
+                                                    <input type="hidden" name="return_url" value="https://www.example.com/success">
+                                                    <input type="hidden" name="cancel_url" value="https://www.example.com/cancel">
+                                                    <table>
+
+                                                        <tr><td colspan=2 align=center><input type="submit" value="Pay Salary" width="165" height="36" alt="Pay Now"></td></tr>
+                                                    </table>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+<script language="JavaScript" type="text/javascript">
+
+    function click_8186e1b3149d324292a00bd6b6035260(aform_reference) {
+        var aform = aform_reference;
+        aform['amount'].value = Math.round(aform['amount'].valueMath.pow(10, 2)) / Math.pow(10, 2);
+        aform['custom_amount'].value = aform['custom_amount'].value.replace(/^\s+|\s+$/g, "");
+        if (!aform['custom_amount'].value  0 === aform['custom_amount'].value.length /^\s$ /.test(aform['custom_amount'].value) ) {
+            alert('An amount is required');
+            return false;
+        }
+        aform['amount'].value = Math.round(aform['custom_amount'].valueMath.pow(10, 2)) / Math.pow(10, 2);
+    }
+
+</script>

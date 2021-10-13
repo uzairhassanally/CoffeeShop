@@ -1,0 +1,20 @@
+﻿@model CoffeeShop.Models.Category
+
+
+@{
+    ViewBag.Title = "Browse";
+    Layout = "~/Views/Shared/Customer.cshtml";
+}
+
+
+<h2>Browsing Category:@Model.Name</h2>
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>
+            @Html.ActionLink(item.Title, "StoreDetails", new { id = item.ItemId })
+        </li>
+    }
+</ul>
+
+

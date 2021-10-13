@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CoffeeShop.Models.Order>
+
+@{
+    ViewBag.Title = "CustomersOrder";
+    Layout = "~/Views/Shared/Customer.cshtml";
+}
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>Order ID</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Date</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (Session["Username"].ToString() == item.Username)
+
+        {
+
+            <tr>
+
+
+                <td>@item.OrderId</td>
+                <td>@item.Username</td>
+                <td>@item.Email</td>
+                <td>@item.OrderDate</td>
+               
+
+
+
+
+
+
+
+
+
+
+                <td>
+                    @Html.ActionLink("Details", "OrderDetails", new { id = item.OrderId }) |
+                    @*@Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })*@
+                </td>
+               
+            </tr>
+
+        }
+    }
+
+</table>
+

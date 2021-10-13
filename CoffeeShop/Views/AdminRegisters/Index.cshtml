@@ -1,0 +1,108 @@
+﻿@model IEnumerable<CoffeeShop.Models.AdminRegister>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@*<div class="main-content">
+        <main>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Email }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Email }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Email })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </main>
+    </div>*@
+
+
+<div class="main-content">
+    <main>
+
+
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Admin</h3>
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td>Last Name</td>
+                                        <td>Userame</td>
+                                        <td>Password</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.FirstName</td>
+                                            <td>@item.LastName</td>
+                                            <td>@item.UserName</td>
+                                            <td>@item.Password</td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>

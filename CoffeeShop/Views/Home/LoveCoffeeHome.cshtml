@@ -1,0 +1,338 @@
+﻿
+@{
+    ViewBag.Title = "LoveCoffeeHome";
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background: url(../../HomepageAssets/img/bg3.jpg);">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>Love</span> Coffee</h2>
+                            <p class="animate__animated animate__fadeInUp">Florida & Lillian Ngoyi Rd</p>
+                            <div>
+                                <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                                @Html.ActionLink("Shop", "Index","Store", null, new { @style = "color: black", @class = "book-a-table-btn scrollto" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2  -->
+                <div class="carousel-item" style="        background: url(../../HomepageAssets/img/bg2.jpg);">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown">Love Coffee </h2>
+                            <p class="animate__animated animate__fadeInUp">Earth First <br /> Coffee a Close Second</p>
+                            <div>
+                                <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                                @Html.ActionLink("Shop", "Index", "Store", null, new { @style = "color: black", @class = "book-a-table-btn scrollto" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="        background: url(../../HomepageAssets/img/bg5.jpg);">
+                    <div class="carousel-background"><img src="img/bg5.jpg" alt=""></div>
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown">Love Coffee</h2>
+                            <p class="animate__animated animate__fadeInUp">Vegan <br /> Independent<br />  100% African</p>
+                            <div>
+                                <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                                @Html.ActionLink("Shop", "Index", "Store", null, new { @style = "color: black", @class = "book-a-table-btn scrollto" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
+<!-- ======= About Section ======= -->
+<main id="main">
+    <section id="about" class="about">
+        <div class="container-fluid">
+            <div class="section-title">
+                <h2>About<span> Us</span></h2>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("~/img/about.jpg");'>
+                    <img src="" class="img-fluid" alt="" style="width: auto; height: 450px; position:center; margin-left:25%; margin-right:25%">
+                </div>
+
+                <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+                    <div class="content">
+                        <h3>Coffee needn't be complicated. <strong>Food shouldn't need to be processed. The environment isn't an afterthought.</strong></h3>
+
+                        <br>
+
+                        <p>
+                            Six years ago I looked around
+                            and I saw Durban was crying out for a cafe which
+                            was as fresh and relaxed as Durban's personality.
+                        </p>
+
+                        <p class="fst-italic">
+                            Nothing lazy or half measured though. A cafe which is as local as it gets but a world away in quality.
+                            A cafe which uses local talent to create eco friendly, low carbon foot print food and coffee.
+                        </p>
+
+                        <p>
+                            The Love Coffee cafes and Kombi ​is this passion distilled in the physical.
+                            It's taken me a while to get there but we're here, we're open and we're serving the people of Durban.
+                        </p>
+
+                        <br>
+
+                        <p>- Jeannie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Section -->
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Check our tasty <span>Menu</span></h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="menu-flters">
+                        <li data-filter="*" class="filter-active">Show All</li>
+                        <li data-filter=".filter-starters">Hot Drinks</li>
+                        <li data-filter=".filter-salads">Cold Drinks</li>
+                        <li data-filter=".filter-specialty">Food</li>
+                    </ul>
+                </div>
+            </div>
+
+         
+        </div>
+    </section>
+    <!-- End Menu Section -->
+    <!-- ======= Events Section ======= -->
+    @*<section id="events" class="events">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Mobile <span>Coffee</span> Kombi</h2>
+                </div>
+
+                <div class="events-slider swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.MobileCoffeeList)
+                        {
+                            <div class="swiper-slide">
+                                <div class="row event-item">
+                                    <div class="col-lg-6">
+                                        <img src="@Html.DisplayFor(modelItem => item.Image)" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                                        <h3>@item.Heading</h3>
+
+                                        <p class="fst-italic">
+                                            @item.Description
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>*@
+    <!-- End Events Section -->
+    <!-- ======= Gallery Section ======= -->
+    @*<section id="gallery" class="gallery">
+            <div class="container-fluid">
+
+                <div class="section-title">
+                    <h2>Some photos from <span>Our Coffee Shop</span></h2>
+                </div>
+
+                <div class="row no-gutters">
+                    @foreach (var item in Model.GalleryList)
+                    {
+                        <div class="col-lg-3 col-md-4">
+                            <div class="gallery-item">
+                                <img src=" @Html.DisplayFor(modelItem => item.Image)" width="300px" height="200px" class="img-fluid" />
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        </section>*@
+    <!-- End Gallery Section -->
+    <!-- ======= Testimonials Section ======= -->
+    @*<section id="testimonials" class="testimonials">
+            <div class="container position-relative">
+                <div class="section-title">
+                    <h2>Some <span>Reviews</span></h2>
+
+                </div>
+                <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.TestimonialList)
+                        {
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <h3>@item.name</h3>
+
+                                    <h4>@item.position</h4>
+
+                                    @if (@item.rating.ToString() == "One")
+                                    {
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                    }
+                                    else if (@item.rating.ToString() == "Two")
+                                    {
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                    }
+                                    else if (@item.rating.ToString() == "Three")
+                                    {
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                    }
+                                    else if (@item.rating.ToString() == "Four")
+                                    {
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                    }
+                                    else if (@item.rating.ToString() == "Five")
+                                    {
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>
+                                    }
+
+                                    <p>
+                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        @item.description
+                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    </p>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>*@
+    <!-- End Testimonials Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2><span>Contact</span> Us</h2>
+
+            </div>
+        </div>
+        <!-- ======= Contact Section Start ======= -->
+        <div class="container mt-5">
+
+            <div class="info-wrap">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 info">
+                        <i class="fa fa-map-marker"></i>
+                        <h4>Location:</h4>
+                        <p>484 Lilian Ngoyi Rd,<br> Morningside, Durban, 4001</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                        <i class="fas fa-clock"></i>
+                        <h4>Open Hours:</h4>
+                        <p>Monday-Friday:6am-5pm<br>Saturday-Sunday:7am-2pm</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                        <i class="fa fa-envelope"></i>
+                        <h4>Email:</h4>
+                        <a href="mailto:jeannie@lovecoffee.durban" target="_top" style="color:black;font-size:12px">jeannie@lovecoffee.durban</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                        <i class="fas-solid fa-phone"></i>
+                        <h4>Call:</h4>
+                        <p>084 493 2802</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group mt-3">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit" style="color:black">Send Message</button></div>
+            </form>
+               -->
+        </div>
+
+
+        <!-- ======= Contact Section  End======= -->
+        <br />
+        <div class="map">
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3461.4624586340237!2d31.02058331474657!3d-29.82207032792866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7077212abfc77%3A0x41f57594bc9ff9a1!2sLove%20Coffee..!5e0!3m2!1sen!2sza!4v1620809980907!5m2!1sen!2sza" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+
+    </section>
+    <!-- End Contact Section -->
+
+</main>
+<!-- End #main -->

@@ -1,0 +1,40 @@
+﻿@if (Session["Email"] == null)
+{
+
+    <ul class="nav navbar-nav navbar-right">
+
+
+        <li>@Html.ActionLink("LogOut", "EmployeeLogin", "Login", null, null)</li>
+
+
+
+
+
+    </ul>
+
+}
+
+else
+{
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello" + " " + " " + Session["UserName"], "EmployeeLogOut", "Login", null, null)
+
+           
+        </li>
+
+
+
+                
+          
+        
+
+
+
+    </ul>
+
+
+
+
+}

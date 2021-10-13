@@ -1,0 +1,175 @@
+﻿@model IEnumerable<CoffeeShop.Models.OrderDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+
+<div class="main-content">
+    <main>
+        @using (Html.BeginForm("Index", "Employee", FormMethod.Post))
+        {
+            <b>
+                Search By :
+            </b>
+            @Html.RadioButton("searchBy", "Ordername")<text>Order Name</Text>
+            <br />
+            @Html.TextBox("search")
+            <input type="submit" value="Search" />
+
+        }
+
+
+
+        You Have @Model.Count()
+        Orders:
+        @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+        @*<table class="table">
+            <tr>
+
+
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Item.Title)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </th>
+
+
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Order.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item.Title)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+
+                    <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.OrderDetailId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.OrderDetailId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.OrderDetailId })
+                        </td>
+                </tr>
+            }
+
+        </table>*@
+
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Employees</h3>
+                        <a href="~/Employee/Orders"><button>Back <span class="las la-arrow-right"></span></button></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.OrderId)
+                                        </td>
+                                        <td>
+                                           Order Name
+                                        
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Order.Username)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Item.Title)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.UnitPrice)
+                                        </td>
+
+
+
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.OrderId)
+                                        </td>
+                                        <td>
+                                            @item.Order.Ordername
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => item.Order.Username)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Item.Title)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                                        </td>
+
+                                        @*<td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.OrderDetailId }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.OrderDetailId }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.OrderDetailId })
+                                        </td>*@
+                                    </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </main>
+
+</div>

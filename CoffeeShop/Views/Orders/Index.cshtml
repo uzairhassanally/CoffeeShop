@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CoffeeShop.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<h2>Orders</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Order ID</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Order Date</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.OrderId</td>
+            <td>@item.Username</td>
+            <td>@item.Email</td>
+            <td>@item.OrderDate</td>
+            <td>@item.Status</td>
+
+           <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+         </td>
+        </tr>
+    }
+
+</table>

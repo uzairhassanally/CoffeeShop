@@ -1,0 +1,45 @@
+﻿@model CoffeeShop.Models.EmployeeRegister
+
+@{
+    ViewBag.Title = "My_Details";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+
+<div class="main-content">
+    <main>
+
+        <div>
+            <h4>Employee Information</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName):&nbsp; @Html.DisplayFor(model => model.FirstName)
+                </dt>
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName):&nbsp;@Html.DisplayFor(model => model.LastName)
+                </dt>
+
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName): &nbsp;@Html.DisplayFor(model => model.UserName)
+                </dt>
+
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password):&nbsp;@Html.DisplayFor(model => model.Password)
+                </dt>
+                <br />
+
+            </dl>
+        </div>
+        @*<p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.UserName }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@
+    </main>
+
+</div>

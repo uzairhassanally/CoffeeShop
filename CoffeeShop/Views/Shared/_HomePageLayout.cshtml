@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Love Coffee Durban</title>
+    <link rel="icon" type="img/titleicon.jpg" href="img/titleicon.jpg">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Favicons
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+    <!-- Google Fonts -->
+    @Styles.Render("https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i")
+
+
+    <!-- Vendor CSS Files -->
+    @Styles.Render("~/HomepageAssets/vendor/animate.css/animate.min.css")
+    @Styles.Render("~/HomepageAssets/vendor/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/HomepageAssets/vendor/bootstrap-icons/bootstrap-icons.css")
+    @Styles.Render("~/HomepageAssets/vendor/boxicons/css/boxicons.min.css")
+    @Styles.Render("~/HomepageAssets/vendor/glightbox/css/glightbox.min.css")
+    @Styles.Render("~/HomepageAssets/vendor/swiper/swiper-bundle.min.css")
+
+    <!--  Main CSS File -->
+    @Styles.Render("~/HomepageAssets/css/style.css")
+</head>
+
+
+<body>
+    <!-- ======= Top Bar ======= -->
+    <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+            <i class="fas fa-mobile-alt d-flex align-items-center"><span>084 493 2802</span></i>
+            <i class="fas fa-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Fri: 06:00 AM - 05:00 PM</span></i>
+        </div>
+    </section>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <div class="logo me-auto">
+                <h1 style="color:yellow">
+                    @Html.ActionLink("Love Coffee", "LoveCoffeeHome", "Home", null, new { @style = "color: yellow" })
+
+                </h1>
+            </div>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="#menu">Our Menu</a></li>
+                    <li><a class="nav-link scrollto" href="#events">Mobile Coffee</a></li>
+                    <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+                </ul>
+
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+            @Html.ActionLink("Shop", "Index", "Store", null, new { @style = "color: black", @class = "book-a-table-btn scrollto" })
+        </div>
+    </header>
+    <!-- End Header -->
+
+    @RenderBody()
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <h3>Love Coffee</h3>
+            <p> Based in Durban, South Africa. Home to the Love Coffee Kombi</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/lovecoffeedurban/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/lovecoffee.dbn/" class="instagram"><i class="bx bxl-instagram"></i></a>
+
+            </div>
+            <div class="copyright">
+                &copy; Copyright @DateTime.Now.Year <strong><span>Love Coffee</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+                Designed & Developed in Durban,South Africa by <a href="">GForce.Devs(OHMS)</a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Back To Top -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- /Back To Top -->
+    <!-- JS Files -->
+    @Scripts.Render("~/HomepageAssets/vendor/bootstrap/js/bootstrap.bundle.min.js")
+    @Scripts.Render("~/HomepageAssets/vendor/glightbox/js/glightbox.min.js")
+    @Scripts.Render("~/HomepageAssets/vendor/isotope-layout/isotope.pkgd.min.js")
+    @Scripts.Render("~/HomepageAssets/vendor/php-email-form/validate.js")
+    @Scripts.Render("~/HomepageAssets/vendor/swiper/swiper-bundle.min.js")
+    @Scripts.Render("~/HomepageAssets/js/main.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+﻿@model CoffeeShop.Models.Order
+
+@{
+    ViewBag.Title = "OrderDetails";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+<div class="main-content">
+    <main>
+        <div>
+            <h4>Search for Orders:</h4>
+            <hr style="width:75%;">
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OrderId)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |*@
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </p>
+
+        @{
+
+            Html.RenderPartial("OrderAccepted");
+        }
+
+        @{
+
+            Html.RenderPartial("OrderReady");
+        }
+
+        @{
+
+            Html.RenderPartial("PickupConfirmed");
+        }
+    </main>
+
+</div>

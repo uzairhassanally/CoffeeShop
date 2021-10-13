@@ -1,0 +1,148 @@
+﻿@model IEnumerable<CoffeeShop.Models.Article>
+
+@{
+    ViewBag.Title = "MediaIndex";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+<div class="main-content">
+    <main>
+        <div class="cards"> 
+            <div class="card-single">
+                <div>
+                    <h1>@Model.Count()</h1>
+                    <span>Comments</span>
+                </div>
+                <div>
+                    <span class="las la-clipboard-list"></span>
+                </div>
+            </div>
+            </div>
+
+            
+
+        @*You Have @Model.Count()
+        Posts:*@
+
+        @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+        @*<table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Like)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Active)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Like)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "MediaEdit", new { id=item.AutoId }) |
+                        @Html.ActionLink("Comments", "MediaDetails", new { id = item.AutoId })
+                        @Html.ActionLink("Delete", "MediaDelete", new { id=item.AutoId })
+                    </td>
+                </tr>
+            }
+
+        </table>*@
+
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>All Comments</h3>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Title)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Like)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Active)
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Like)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Active)
+                                            </td>
+                                            <td>
+                                                @*@Html.ActionLink("Edit", "MediaEdit", new { id = item.AutoId }) |*@
+                                                @Html.ActionLink("Comments", "MediaDetails", new { id = item.AutoId })
+                                                @*@Html.ActionLink("Delete", "MediaDelete", new { id = item.AutoId })*@
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+</div>

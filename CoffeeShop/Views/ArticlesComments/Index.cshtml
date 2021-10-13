@@ -1,0 +1,129 @@
+﻿@model IEnumerable<CoffeeShop.Models.ArticlesComment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThisDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThisDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArticleId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CommentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="main-content">
+    <main>
+        You Have @Model.Count()
+        Comments:
+        <br />
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Comments</h3>
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Comments)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.ThisDateTime)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.ArticleId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayNameFor(model => model.Rating)
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Comments)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ThisDateTime)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ArticleId)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Rating)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.CommentId }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>

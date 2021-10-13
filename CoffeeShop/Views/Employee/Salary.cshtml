@@ -1,0 +1,174 @@
+﻿@model IEnumerable<CoffeeShop.Models.Salary>
+
+@{
+    ViewBag.Title = "Salary";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+<div class="main-content">
+    <main>
+
+        @*<table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmployeeRegister.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Month)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.To)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalPay)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pay)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Deductions)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeductionReason)
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Created)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (Session["Email"].ToString() == item.To)
+                    {
+
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeRegister.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Month)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.To)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalPay)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Pay)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Deductions)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DeductionReason)
+                            </td>
+                            <td>
+                                @item.Status
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Created)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "SalaryEdit", new { id = item.ID }) |
+                                @Html.ActionLink("Details", "SalaryDetails", new { id = item.ID })
+                                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>*@
+
+
+        <div class="recent-grid">
+        <div class="projects">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Salary History</h3>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="table-respnsive">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.EmployeeRegister.FirstName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Month)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.To)
+                                    </th>
+                                    
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Pay)
+                                    </th>
+                                    
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Created)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    if (Session["Email"].ToString() == item.To)
+                                    {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeRegister.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Month)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.To)
+                                    </td>
+                                    
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Pay)
+                                    </td>
+                                    
+                                    <td>
+                                        @item.Status
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Created)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "SalaryEdit", new { id = item.ID }) |
+                                        @Html.ActionLink("Details", "SalaryDetails", new { id = item.ID })
+                                        
+                                    </td>
+                                </tr>
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                    }
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+</div>
+    </main>
+
+</div>

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<CoffeeShop.Models.CustomerRegister>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.UserName }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UserName }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UserName })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="main-content">
+    <main>
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <h2>@Model.Count()</h2>
+                    <span>Customers</span>
+                </div>
+                <div>
+                    <span class="las la-users"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Customers</h3>
+                        <a href="~/Admin/Birthday"><button>Birthdays <span class="las la-arrow-right"></span></button></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>Firstname</td>
+                                        <td>Last Name</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Email</td>
+                                            <td>@item.FirstName</td>
+                                            <td>@item.LastName</td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.UserName }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.UserName }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.UserName })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>

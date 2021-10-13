@@ -1,0 +1,137 @@
+﻿@model IEnumerable<CoffeeShop.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Like)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Like)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AutoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AutoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AutoId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="main-content">
+    <main>
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <h2>@Model.Count()</h2>
+                    <span>Comments</span>
+                </div>
+                <div>
+                    <span class="las la-clipboard-list"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Posts</h3>
+                        <a href="~/Admin/Create"><button>New Post<span class="las la-arrow-right"></span></button></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Title</td>
+                                        <td>Description</td>
+                                        <td>Like</td>
+                                        <td>Activ</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Like)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Active)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.AutoId }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.AutoId }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.AutoId })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        @{
+            Html.RenderAction("Index", "ArticlesComments");
+        }
+    </main>
+
+</div>
+
+

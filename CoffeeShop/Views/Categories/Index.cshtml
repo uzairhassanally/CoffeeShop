@@ -1,0 +1,106 @@
+﻿@model IEnumerable<CoffeeShop.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="main-content">
+    <main>
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <h2>@Model.Count()</h2>
+                    <span>Categories</span>
+                </div>
+                <div>
+                    <span class="las la-clipboard-list"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="recent-grid">
+            <div class="projects">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Categories</h3>
+                        <a href="~/Categories/Create"><button>New Category <span class="las la-arrow-right"></span></button></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-respnsive">
+                            <table width="100%">
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Description</td>
+                                        <td></td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Description</td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>

@@ -1,0 +1,33 @@
+﻿@model CoffeeShop.Models.CustomerRegister
+
+@{
+    ViewBag.Title = "SendMail";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>SendMail</h2>
+
+
+@using (Html.BeginForm("SendMail", "Admin", FormMethod.Post))
+{
+
+
+    <p>
+        To: @Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+    </p>
+
+
+    <div>
+        <p>
+           Happy BirthDay.We Wish You Well @Html.EditorFor(Model=>Model.UserName) You Have recieved a Free Birthday Coffee At Any of Our Stores. You Will be Required to Bring Your ID
+          
+        </p>
+
+    </div>
+
+
+    <input type="submit" value="Send Email" />
+
+
+}

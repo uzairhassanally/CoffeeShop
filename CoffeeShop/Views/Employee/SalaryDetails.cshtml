@@ -1,0 +1,68 @@
+﻿@model CoffeeShop.Models.Salary
+
+@{
+    ViewBag.Title = "SalaryDetails";
+    Layout = "~/Views/Shared/Employee.cshtml";
+}
+
+<div class="main-content">
+    <main>
+        <div>
+            <h4>Salary</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmployeeRegister.FirstName):&nbsp;@Html.DisplayFor(model => model.EmployeeRegister.FirstName)
+                </dt>
+
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmployeeRegister.Email):&nbsp; @Html.DisplayFor(model => model.EmployeeRegister.Email)
+                </dt>
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Month):&nbsp;@Html.DisplayFor(model => model.Month)
+                </dt>
+
+
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TotalPay):&nbsp; @Html.DisplayFor(model => model.TotalPay)
+                </dt>
+
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Pay): &nbsp;@Html.DisplayFor(model => model.Pay)
+                </dt>
+                <br />
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Deductions):&nbsp; @Html.DisplayFor(model => model.Deductions)
+                </dt>
+
+                <br />
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DeductionReason):&nbsp; @Html.DisplayFor(model => model.DeductionReason)
+                </dt>
+
+                <br />
+                <dt>
+                    @Html.DisplayNameFor(model => model.Created): &nbsp;@Html.DisplayFor(model => model.Created)
+                </dt>
+                <br />
+
+            </dl>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "Salary")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </main>
+
+</div>

@@ -1,0 +1,85 @@
+﻿@model CoffeeShop.Models.CustomerRegister
+
+@{
+    ViewBag.Title = "Wish";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<div class="main-content">
+    <main>
+        <div>
+            <h4>Customer Information</h4>
+            <hr />
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Date)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Month)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Month)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.To)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.To)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Year)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Year)
+                </dd>
+
+
+
+
+            </dl>
+        </div>
+        <p>
+
+            @Html.ActionLink("Back to List", "Birthday")
+        </p>
+        @{
+            Html.RenderAction("SendMail");
+        }
+    </main>
+
+</div>

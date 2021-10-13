@@ -1,0 +1,54 @@
+﻿@model CoffeeShop.Models.WorkFlow
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<div class="main-content">
+    <main>
+        <div>
+            <h4>WorkFlow</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmployeeRegister.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmployeeRegister.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaskDescription.TaskName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TaskDescription.TaskName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DueDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DueDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.WorkFlowID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </main>
+
+</div>

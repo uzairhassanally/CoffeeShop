@@ -1,0 +1,85 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <link rel="stylesheet" href="~/Dashboard/style.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Admin Management</title>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="lab la-accusoft"></span><span>Admin Management</span></h2>
+        </div><br>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+
+                    <a href="~/EmployeeRegisters/Index"><span class="las la-users"></span><span>Employee</span></a>
+                </li>
+                <li>
+                    <a href="~/CustomerRegisters/Index"><span class="las la-users"></span><span>Customers</span></a>
+                </li>
+                <li>
+                    <a href="~/Categories/Index"><span class="las la-clipboard-list"></span><span>Catogories</span></a>
+                </li>
+                <li>
+                    <a href="~/Items/Index"><span class="las la-shopping-bag"></span><span>Shop Items</span></a>
+                </li>
+                <li>
+                    <a href="~/OrderDetails/Index"><span class="las la-clipboard-list"></span><span>Order Details</span></a>
+                </li>
+                <li>
+                    <a href="~/Admin/Index"><span class="las la-user-circle"></span><span>Media</span></a>
+                </li>
+               
+                <li>
+                    <a href="~/Scheduler/Index" class="tab"><span class="las la-clipboard-list"></span><span>Calender</span></a>
+                </li>
+                <li>
+                    <a href="~/Producers/Index" class="tab"><span class="las la-clipboard-list"></span><span>Producer</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Dashboard
+            </h2>
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Search here" />
+            </div>
+            <div class="user-wrapper">
+                @*<img src="img/2.jpg" width="40px" height="40px" alt="">*@
+                <div>@Html.Partial("Admin_Partial")
+                    @*<h4>User Name</h4>
+                    <small>Super Admin</small>*@
+                </div>
+            </div>
+        </header>
+        
+    </div>
+
+    @RenderBody();
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
